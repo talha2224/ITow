@@ -28,9 +28,29 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={DefaultTheme}>
       <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="onboarding/index" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/index" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/register" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/otp" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/username" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/profile" options={{ headerShown: false }} />
+
+
+        <Stack.Screen name="home/index" options={{ headerShown: false }} />
+        <Stack.Screen name="home/map" options={{ headerShown: false }} />
+        <Stack.Screen name="home/request" options={{ headerShown: false }} />
+        <Stack.Screen name="home/history" options={{ headerShown: false }} />
+        <Stack.Screen name="home/service" options={{ headerShown: false }} />
+        <Stack.Screen name="home/rerequest" options={{ headerShown: false }} />
+        <Stack.Screen name="home/profile/index" options={{ headerShown: false }} />
+        <Stack.Screen name="home/profile/otp" options={{ headerShown: false }} />
+        <Stack.Screen name="home/profile/setting" options={{ headerShown: false }} />
+        <Stack.Screen name="home/profile/about" options={{ headerShown: false }} />
+
+
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
