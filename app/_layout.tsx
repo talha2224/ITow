@@ -38,6 +38,11 @@ export default function RootLayout() {
         <Stack.Screen name="auth/username" options={{ headerShown: false }} />
         <Stack.Screen name="auth/profile" options={{ headerShown: false }} />
 
+        <Stack.Screen name="auth/driver/index" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/driver/otp" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/driver/username" options={{ headerShown: false }} />
+        <Stack.Screen name="auth/driver/profile" options={{ headerShown: false }} />
+
 
         <Stack.Screen name="home/index" options={{ headerShown: false }} />
         <Stack.Screen name="home/map" options={{ headerShown: false }} />
@@ -49,6 +54,21 @@ export default function RootLayout() {
         <Stack.Screen name="home/profile/otp" options={{ headerShown: false }} />
         <Stack.Screen name="home/profile/setting" options={{ headerShown: false }} />
         <Stack.Screen name="home/profile/about" options={{ headerShown: false }} />
+
+        <Stack.Screen name="driver/index" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/create" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/notification" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/details" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/services" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/history" options={{ headerShown: false }} />
+
+        <Stack.Screen name="driver/profile/index" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/profile/otp" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/profile/setting" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/profile/about" options={{ headerShown: false }} />
+        <Stack.Screen name="driver/profile/earnings" options={{ headerShown: false }} />
+
+
 
 
         <Stack.Screen name="+not-found" />

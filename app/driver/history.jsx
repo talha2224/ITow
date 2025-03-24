@@ -1,10 +1,10 @@
 import { Dimensions, Image, Modal, Pressable, ScrollView, Text, TextInput, View } from 'react-native'
-import BottomNavBar from '../../components/BottomNavBar'
 import { AntDesign, Entypo, FontAwesome5, Ionicons, MaterialIcons } from '@expo/vector-icons'
 import { router } from 'expo-router'
 import Mastercard from '../../assets/images/home/mastercard.png'
 import { useState } from 'react'
 import Profile from '../../assets/images/home/profile.png'
+import BottomDriverNav from '../../components/BottomDriverNav'
 
 const History = () => {
 
@@ -93,7 +93,7 @@ const History = () => {
                 <Text>Towing services</Text>
               </View>
 
-              <Pressable onPress={() => { router.push("/home/rerequest") }} style={{ backgroundColor: "#2669FF", paddingHorizontal: 10, paddingVertical: 7, borderRadius: 100 }}><Text style={{ color: "#fff" }}>View Map</Text></Pressable>
+              <Pressable style={{ backgroundColor: "#2669FF", paddingHorizontal: 10, paddingVertical: 7, borderRadius: 100 }}><Text style={{ color: "#fff" }}>View Map</Text></Pressable>
 
             </View>
 
@@ -179,8 +179,6 @@ const History = () => {
 
             <TextInput placeholder='He was a friendly and a very nice young man.' style={{ marginTop: 10, paddingHorizontal: 10, paddingVertical: 12, borderWidth: 1, borderColor: "#DAE5FF", borderRadius: 10 }} />
 
-            <Pressable onPress={() => { router.push("/home/request") }} style={{ width: "100%", backgroundColor: "#2669FF", height: 45, justifyContent: "center", alignItems: "center", borderRadius: 10, marginTop: 20 }}><Text style={{ color: "white" }}>Re-order Service</Text></Pressable>
-
 
 
           </View>
@@ -254,7 +252,7 @@ const History = () => {
         )
       }
 
-      {(!detailsModel && !sortModel) && (<BottomNavBar />)}
+      {(!detailsModel && !sortModel) && (<BottomDriverNav />)}
 
     </View>
   )

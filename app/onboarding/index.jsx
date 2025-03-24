@@ -54,7 +54,7 @@ const Onboarding = () => {
         }
         else{
             await AsyncStorage.setItem("registrationType","driver")
-            router.push("/auth/driver/register") 
+            router.push("/auth/driver") 
         }
     }
 
@@ -103,7 +103,7 @@ const Onboarding = () => {
                                     </View>
                                     <Text style={{ fontSize: 15 }}>As a Customer</Text>
                                 </TouchableOpacity>
-                                <TouchableOpacity onPress={()=>{handleRegistration("customer")}} style={{ marginTop: 10, backgroundColor: "#2669FF", width: "100%", height: 55, alignItems: "center", flexDirection: "row", paddingHorizontal: 20, borderRadius: 10 }}>
+                                <TouchableOpacity onPress={()=>{handleRegistration("driver")}} style={{ marginTop: 10, backgroundColor: "#2669FF", width: "100%", height: 55, alignItems: "center", flexDirection: "row", paddingHorizontal: 20, borderRadius: 10 }}>
                                     <View style={{ justifyContent: "center", alignItems: "center", width: 35, height: 35, backgroundColor: "#4083FF", borderRadius: 10, marginRight: 10 }}>
                                         <AntDesign name="car" size={15} color="white" />
                                     </View>
