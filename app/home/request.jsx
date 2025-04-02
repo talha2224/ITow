@@ -229,8 +229,8 @@ const Request = () => {
 
                         <Text style={{ color: "#727272", marginTop: 10 }}>Your pick-up & drop-off location</Text>
 
-                        <TextInput placeholderTextColor={"#727272"} placeholder='Pick-up location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10 }} />
-                        <TextInput placeholderTextColor={"#727272"} placeholder='Drop-off location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10 }} />
+                        <TextInput placeholderTextColor={"#727272"} placeholder='Pick-up location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10,height:40 }} />
+                        <TextInput placeholderTextColor={"#727272"} placeholder='Drop-off location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10,height:40 }} />
 
                         <Pressable onPress={() => { setPaymentModel(true); setRequestModel(false) }} style={{ width: "100%", backgroundColor: "#2669FF", height: 45, justifyContent: "center", alignItems: "center", borderRadius: 10, marginTop: 20 }}><Text style={{ color: "white" }}>Next</Text></Pressable>
 
@@ -255,8 +255,8 @@ const Request = () => {
 
                         <Text style={{ color: "#727272", marginTop: 10 }}>Your pick-up & drop-off location</Text>
 
-                        <TextInput value='Aristotle, New York' placeholderTextColor={"#727272"} placeholder='Pick-up location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10 }} />
-                        <TextInput value='Aristotle, New York' placeholderTextColor={"#727272"} placeholder='Drop-off location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10 }} />
+                        <TextInput value='Aristotle, New York' placeholderTextColor={"#727272"} placeholder='Pick-up location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10,height:40}} />
+                        <TextInput value='Aristotle, New York' placeholderTextColor={"#727272"} placeholder='Drop-off location' style={{ backgroundColor: "#F7F7F7", marginTop: 10, borderRadius: 5, paddingHorizontal: 10,height:40}} />
 
                         <Text style={{ marginTop: 10 }}>Payment</Text>
 

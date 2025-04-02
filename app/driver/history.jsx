@@ -188,69 +188,62 @@ const History = () => {
       </Modal>
 
 
-      {
-        sortModel && (
-          <Pressable style={{ position: "absolute", width: Dimensions.get("screen").width, height: Dimensions.get("screen").height, backgroundColor: 'rgba(0, 0, 0, 0.5)', justifyContent: "flex-end", alignItems: "flex-end" }}>
 
 
-            <View style={{ backgroundColor: "#FFFFFF", padding: 20, width: Dimensions.get("screen").width, borderTopStartRadius: 30, height: 320, borderTopEndRadius: 30 }}>
+      <Modal onRequestClose={() => setSortModel(false)} visible={sortModel} animationType="slide" transparent={true}>
 
+        <Pressable onPress={() => setSortModel(false)} style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
 
-              <Text>Sort by</Text>
+          <View style={{ backgroundColor: 'white', borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: 25, paddingBottom: 50, }}>
+            <Text>Sort by</Text>
 
-              <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
-                <View style={{ flex: 1, paddingVertical: 6, borderWidth: 1, borderColor: "#FFE5C0", marginTop: 7, justifyContent: "center", alignItems: "center", borderRadius: 100, }}>
-                  <Text style={{ color: "#FF9500" }}>In Transit</Text>
-                </View>
-                <View style={{ flex: 1, paddingVertical: 6, borderWidth: 1, borderColor: "#C5FFD3", marginTop: 7, justifyContent: "center", alignItems: "center", borderRadius: 100, }}>
-                  <Text style={{ color: "#34C759" }}>Successful</Text>
-                </View>
-                <View style={{ flex: 1, paddingVertical: 6, borderWidth: 1, borderColor: "#FFCFCC", marginTop: 7, justifyContent: "center", alignItems: "center", borderRadius: 100, }}>
-                  <Text style={{ color: "#FF3B30" }}>Failed</Text>
-                </View>
+            <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 6 }}>
+              <View style={{ flex: 1, paddingVertical: 6, borderWidth: 1, borderColor: "#FFE5C0", marginTop: 7, justifyContent: "center", alignItems: "center", borderRadius: 100, }}>
+                <Text style={{ color: "#FF9500" }}>In Transit</Text>
+              </View>
+              <View style={{ flex: 1, paddingVertical: 6, borderWidth: 1, borderColor: "#C5FFD3", marginTop: 7, justifyContent: "center", alignItems: "center", borderRadius: 100, }}>
+                <Text style={{ color: "#34C759" }}>Successful</Text>
+              </View>
+              <View style={{ flex: 1, paddingVertical: 6, borderWidth: 1, borderColor: "#FFCFCC", marginTop: 7, justifyContent: "center", alignItems: "center", borderRadius: 100, }}>
+                <Text style={{ color: "#FF3B30" }}>Failed</Text>
+              </View>
+            </View>
+
+            <Text style={{ marginTop: 20 }}>Filter by</Text>
+
+            <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10, gap: 10 }}>
+
+              <View style={{ flex: 1 }}>
+                <Text style={{ color: "#727272" }}>From</Text>
+                <TextInput placeholderTextColor={"#727272"} placeholder='Mon 02 Mar.' style={{ borderRadius: 5, paddingRight: 10, borderBottomWidth: 1, borderColor: "#DDDDDD" }} />
               </View>
 
-              <Text style={{ marginTop: 20 }}>Filter by</Text>
-
-              <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10, gap: 10 }}>
-
-                <View style={{ flex: 1 }}>
-                  <Text style={{ color: "#727272" }}>From</Text>
-                  <TextInput placeholderTextColor={"#727272"} placeholder='Mon 02 Mar.' style={{ borderRadius: 5, paddingRight: 10, borderBottomWidth: 1, borderColor: "#DDDDDD" }} />
-                </View>
-
-                <View style={{ flex: 1 }}>
-                  <Text style={{ color: "#727272" }}>To</Text>
-                  <TextInput placeholderTextColor={"#727272"} placeholder='Mon 02 Mar.' style={{ borderRadius: 5, paddingRight: 10, borderBottomWidth: 1, borderColor: "#DDDDDD" }} />
-                </View>
-
-
+              <View style={{ flex: 1 }}>
+                <Text style={{ color: "#727272" }}>To</Text>
+                <TextInput placeholderTextColor={"#727272"} placeholder='Mon 02 Mar.' style={{ borderRadius: 5, paddingRight: 10, borderBottomWidth: 1, borderColor: "#DDDDDD" }} />
               </View>
-
-
-              <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 20, gap: 10 }}>
-
-                <Pressable onPress={() => { setSortModel(false) }} style={{ flex: 1, borderWidth: 1, borderColor: "#DDDDDD", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
-                  <Text>Cancel</Text>
-                </Pressable>
-
-                <Pressable onPress={() => { setSortModel(false) }} style={{ flex: 1, backgroundColor: "#2669FF", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
-                  <Text style={{ color: "#fff" }}>Apply</Text>
-                </Pressable>
-
-
-              </View>
-
-
-
 
 
             </View>
 
 
-          </Pressable>
-        )
-      }
+            <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 20, gap: 10 }}>
+
+              <Pressable onPress={() => { setSortModel(false) }} style={{ flex: 1, borderWidth: 1, borderColor: "#DDDDDD", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
+                <Text>Cancel</Text>
+              </Pressable>
+
+              <Pressable onPress={() => { setSortModel(false) }} style={{ flex: 1, backgroundColor: "#2669FF", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
+                <Text style={{ color: "#fff" }}>Apply</Text>
+              </Pressable>
+
+
+            </View>
+          </View>
+
+        </Pressable>
+
+      </Modal>
 
       {(!detailsModel && !sortModel) && (<BottomDriverNav />)}
 

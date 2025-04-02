@@ -1,7 +1,7 @@
 import { Entypo, Feather, FontAwesome6, MaterialIcons } from '@expo/vector-icons'
 import { router } from 'expo-router'
 import React, { useState } from 'react'
-import { Dimensions, Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Dimensions, Modal, Pressable, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
 const Setting = () => {
     const [deleteAccountModel, setdeleteAccountModel] = useState(false)
@@ -84,48 +84,38 @@ const Setting = () => {
                 )
             }
 
-            {
-                changePasswordModel && (
-                    <Pressable style={{ position: "absolute", width: Dimensions.get("screen").width, height: Dimensions.get("screen").height, backgroundColor: 'rgba(0, 0, 0, 0.5)', justifyContent: "flex-end", alignItems: "flex-end" }}>
+            <Modal onRequestClose={() => setchangePasswordModel(false)} visible={changePasswordModel} animationType="slide" transparent={true}>
 
+                <Pressable onPress={() => setchangePasswordModel(false)} style={{ flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
 
-                        <View style={{ backgroundColor: "#FFFFFF", padding: 20, width: Dimensions.get("screen").width, borderTopStartRadius: 30, height: 390, borderTopEndRadius: 30 }}>
+                    <View style={{ backgroundColor: 'white', borderTopLeftRadius: 20, borderTopRightRadius: 20, padding: 25, paddingBottom: 50, }}>
 
+                        <Text style={{ fontSize: 19 }}>Change Password</Text>
 
-                            <Text style={{ fontSize: 19 }}>Change Password</Text>
+                        <Text style={{ marginTop: 10, color: "#727272" }}>Sed ut perspiciatis unde omnis iste natus error</Text>
 
-                            <Text style={{ marginTop: 10, color: "#727272" }}>Sed ut perspiciatis unde omnis iste natus error</Text>
+                        <TextInput placeholder='Old Password' style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderWidth: 1, borderColor: "#DAE5FF", borderRadius: 10 }} />
+                        <TextInput placeholder='New Password' style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderWidth: 1, borderColor: "#DAE5FF", borderRadius: 10 }} />
+                        <TextInput placeholder='Confirm New Password' style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderWidth: 1, borderColor: "#DAE5FF", borderRadius: 10 }} />
 
-                            <TextInput placeholder='Old Password' style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderWidth: 1, borderColor: "#DAE5FF", borderRadius: 10 }} />
-                            <TextInput placeholder='New Password' style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderWidth: 1, borderColor: "#DAE5FF", borderRadius: 10 }} />
-                            <TextInput placeholder='Confirm New Password' style={{ marginTop: 10, paddingHorizontal: 20, paddingVertical: 12, borderWidth: 1, borderColor: "#DAE5FF", borderRadius: 10 }} />
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 20, gap: 10 }}>
 
+                            <Pressable onPress={() => { setchangePasswordModel(false) }} style={{ flex: 1, borderWidth: 1, borderColor: "#DDDDDD", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
+                                <Text>Cancel</Text>
+                            </Pressable>
 
-
-
-                            <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 20, gap: 10 }}>
-
-                                <Pressable onPress={() => { setchangePasswordModel(false) }} style={{ flex: 1, borderWidth: 1, borderColor: "#DDDDDD", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
-                                    <Text>Cancel</Text>
-                                </Pressable>
-
-                                <Pressable onPress={() => { setchangePasswordModel(false) }} style={{ flex: 1, backgroundColor: "#2669FF", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
-                                    <Text style={{ color: "#fff" }}>Save</Text>
-                                </Pressable>
-
-
-                            </View>
-
-
-
+                            <Pressable onPress={() => { setchangePasswordModel(false) }} style={{ flex: 1, backgroundColor: "#2669FF", justifyContent: "center", alignItems: "center", height: 45, borderRadius: 100 }}>
+                                <Text style={{ color: "#fff" }}>Save</Text>
+                            </Pressable>
 
 
                         </View>
 
+                    </View>
 
-                    </Pressable>
-                )
-            }
+                </Pressable>
+
+            </Modal>
 
 
 
